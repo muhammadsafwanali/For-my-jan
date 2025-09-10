@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meri Pyari Dua</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hearts"></div>
+
+  <div class="container">
+    <h1 class="message">
+      Meri pyari Dua, tum pareshan nahi hua karo.    
+      Allah tumhe hamesha hasta muskurata rakhe.  
+      Tumhari zindagi mein kabhi koi gham na aaye.  
+      Har din tumhari zindagi khushiyon se bhara rahe.  
+      Hasti hui tum bohot achi lagti ho.
+      Allah tumhe har nazar-e-bad se mehfooz rakhe. Ameen.
+    </h1>
+  </div>
+
+  <script>
+    // Falling hearts effect
+    const heartsContainer = document.querySelector('.hearts');
+    function createHeart() {
+      const heart = document.createElement('img');
+      heart.src = "images/heart.png";
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
