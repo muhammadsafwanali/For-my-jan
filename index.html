@@ -1,39 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meri Pyari Dua</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>I'm Sorry Dua ❤</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="hearts"></div>
+  <div class="overlay"></div>
 
-  <div class="container">
-    <h1 class="message">
-      Meri pyari Dua, tum pareshan nahi hua karo.    
-      Allah tumhe hamesha hasta muskurata rakhe.  
-      Tumhari zindagi mein kabhi koi gham na aaye.  
-      Har din tumhari zindagi khushiyon se bhara rahe.  
-      Hasti hui tum bohot achi lagti ho.
-      Allah tumhe har nazar-e-bad se mehfooz rakhe. Ameen.
-          Chalo ab muskura bhi do piyari Dua.
-    </h1>
-  </div>
+  <main class="container">
+    <header class="hero">
+      <h1 class="title">I’m Sorry, Dua ❤</h1>
+      <p class="subtitle">Mujhe afsos hai — tumhari muskurahat meri duniya hai.</p>
+    </header>
 
-  <script>
-    // Falling hearts effect
-    const heartsContainer = document.querySelector('.hearts');
-    function createHeart() {
-      const heart = document.createElement('img');
-      heart.src = "images/heart.png";
-      heart.classList.add('heart');
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (3 + Math.random() * 5) + "s";
-      heartsContainer.appendChild(heart);
-      setTimeout(() => heart.remove(), 8000);
-    }
-    setInterval(createHeart, 500);
-  </script>
+    <section class="card message-card">
+      <h2>Apology</h2>
+      <p id="apologyText" contenteditable="true" spellcheck="false">
+Dua, mujhe maaf kar do. Main ne tumhe dukh diya aur mujhe bohot afsos hai. Tum meri zindagi ho — tumhari muskurahat mere liye sab kuch hai. Main wada karta hoon ke phir kabhi aisa nahin hoga.
+      </p>
+      <small class="hint">Tap to edit this message (optional).</small>
+    </section>
+
+    <section class="card promise-card">
+      <h2>Promise</h2>
+      <p>I promise I’ll never make you cry again. I’ll protect your heart always.</p>
+    </section>
+
+    <div class="center">
+      <button id="forgiveBtn" class="forgive">Forgive Me, Dua 💖</button>
+      <button id="playBtn" class="play">Play Music ▶</button>
+    </div>
+
+    <div id="finalModal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Thank you, Dua.</h3>
+        <p>You’ve made my world complete again. ❤</p>
+        <button id="closeModal" class="close">Close</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p class="small">Made with love. No photos. Just feelings.</p>
+    </footer>
+  </main>
+
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.simple-music-loop/piano.mp3" type="audio/mpeg">
+    <!-- If this external link doesn't play, user can upload their own piano mp3 named 'music.mp3' and update src -->
+  </audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
