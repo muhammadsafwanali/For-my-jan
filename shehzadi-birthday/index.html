@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05010d" />
+  <title>Shehzadi 👑 • 31 July</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body class="locked">
+  <canvas id="stars"></canvas>
+  <canvas id="fx"></canvas>
+  <div id="balloons"></div>
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="orb o3"></div>
+  <div class="orb o4"></div>
+
+  <!-- ================= LOCK SCREEN (12 AM unlock) ================= -->
+  <div id="lock" class="lock">
+    <div class="lock-card">
+      <div class="lock-crown">👑</div>
+      <p class="lock-kicker" data-cfg="lockKicker"></p>
+      <h1 class="lock-title" data-cfg="lockTitle"></h1>
+      <p class="lock-line" data-cfg="lockLine"></p>
+
+      <div class="countdown" id="countdown">
+        <div class="cd"><b id="cdD">00</b><span>Din</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd"><b id="cdH">00</b><span>Ghantay</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd"><b id="cdM">00</b><span>Minute</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd"><b id="cdS">00</b><span>Second</span></div>
+      </div>
+
+      <button id="unlockBtn" class="btn btn-glow hidden" data-cfg="unlockBtn"></button>
+      <p class="lock-hint" id="lockHint" data-cfg="lockHint"></p>
+    </div>
+  </div>
+
+  <!-- ================= MAIN PAGE ================= -->
+  <main id="page">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <p class="hero-date reveal" data-cfg="heroDate"></p>
+      <h1 class="hero-title reveal">
+        <span class="ht-small" data-cfg="heroKicker"></span><br />
+        <em data-cfg="herName"></em>
+      </h1>
+      <p class="hero-sub reveal" data-cfg="heroSub"></p>
+      <div class="scroll-hint"><span></span></div>
+    </section>
+
+    <!-- CAKE + MIC CANDLES -->
+    <section class="section cake-section" id="cakeSection">
+      <h2 class="reveal" data-cfg="cakeTitle"></h2>
+      <p class="section-sub reveal" data-cfg="cakeSub"></p>
+
+      <div class="cake-stage reveal">
+        <div class="cake" id="cake">
+          <div class="candles" id="candles"></div>
+          <div class="tier tier-3"><div class="icing"></div></div>
+          <div class="tier tier-2"><div class="icing"></div></div>
+          <div class="tier tier-1"><div class="icing"></div></div>
+          <div class="plate"></div>
+          <div class="table-glow"></div>
+        </div>
+      </div>
+
+      <div class="cake-controls reveal">
+        <button id="micBtn" class="btn">🎤 <span data-cfg="micBtn"></span></button>
+        <button id="blowBtn" class="btn btn-alt">🌬️ <span data-cfg="blowBtn"></span></button>
+        <button id="relightBtn" class="btn btn-ghost hidden">🔄 <span data-cfg="relightBtn"></span></button>
+      </div>
+      <p id="cakeStatus" class="cake-status" data-cfg="cakeStatusStart"></p>
+
+      <div id="bdayBanner" class="bday-banner hidden">
+        <span class="bb-small" data-cfg="bannerSmall"></span>
+        <span class="bb-big"><span data-cfg="bannerBig"></span> <em data-cfg="herName"></em> 👑</span>
+      </div>
+    </section>
+
+    <!-- REASONS CARDS -->
+    <section class="section" id="reasonsSection">
+      <h2 class="reveal" data-cfg="reasonsTitle"></h2>
+      <p class="section-sub reveal" data-cfg="reasonsSub"></p>
+      <div class="cards reveal" id="cards"></div>
+    </section>
+
+    <!-- LOVE LETTER -->
+    <section class="section" id="letterSection">
+      <h2 class="reveal" data-cfg="letterTitle"></h2>
+      <div class="envelope-wrap reveal" id="envWrap">
+        <div class="envelope" id="envelope">
+          <div class="letter-paper" id="letterPaper">
+            <h3 data-cfg="letterHeading"></h3>
+            <div id="letterParas"></div>
+            <p class="letter-sign" data-cfg="letterSign"></p>
+          </div>
+          <div class="env-pocket"></div>
+          <div class="env-flap"></div>
+          <button class="env-seal" id="envSeal" aria-label="khat kholein">👑</button>
+        </div>
+        <p class="env-hint" id="envHint" data-cfg="letterHint"></p>
+      </div>
+    </section>
+
+    <!-- SKY LANTERNS (khwahish) -->
+    <section class="section lantern-section" id="lanternSection">
+      <h2 class="reveal" data-cfg="lanternTitle"></h2>
+      <p class="section-sub reveal" data-cfg="lanternSub"></p>
+      <button id="lanternBtn" class="lantern-btn reveal" aria-label="lantern uraao">
+        <span class="lb-glow"></span>
+        <span class="lb-body"></span>
+      </button>
+      <p class="lantern-hint reveal" data-cfg="lanternBtn"></p>
+      <p id="lanternMsg" class="lantern-msg hidden" data-cfg="lanternWish"></p>
+    </section>
+
+    <!-- FINALE -->
+    <section class="section finale" id="finaleSection">
+      <p class="finale-script reveal" data-cfg="finaleScript"></p>
+      <h2 class="reveal" data-cfg="finaleTitle"></h2>
+      <p class="section-sub reveal" data-cfg="finaleSub"></p>
+      <button id="fwBtn" class="btn btn-glow reveal">🎆 <span data-cfg="fwBtn"></span></button>
+    </section>
+
+    <footer>
+      <p>💜 <span data-cfg="footerText"></span> 💜</p>
+      <p class="footer-date" data-cfg="footerDate"></p>
+    </footer>
+  </main>
+
+  <!-- 🥚 chhupa hua dil (easter egg) -->
+  <div id="hiddenHeart" class="hidden-heart">💜</div>
+
+  <!-- 🥚 secret message modal -->
+  <div id="secretModal" class="modal hidden">
+    <div class="modal-card">
+      <button id="modalClose" class="modal-x" aria-label="band karo">✕</button>
+      <div class="modal-emoji" id="modalEmoji">💜</div>
+      <p id="modalText" class="modal-text"></p>
+    </div>
+  </div>
+
+  <button id="musicBtn" class="music-btn" title="Music on/off">🔇</button>
+
+  <noscript><p style="color:#fff;text-align:center;padding:20px">Is website ke liye JavaScript zaroori hai.</p></noscript>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
